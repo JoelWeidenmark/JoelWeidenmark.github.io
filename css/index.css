@@ -21,6 +21,13 @@
   height: 200px;
 }
 
+#buttonsWrapper{
+  height: 150px;
+  width: 150px;
+  margin-top: 20px;
+  border: 2px solid #000;
+}
+
 .buttonText{
   background-color: #fff;
   border: 2px solid #fff;
