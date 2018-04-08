@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- API KEY:  AIzaSyDE6k539tFPvcMmW3n-6Tb7Qt0XrqCIbuo -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/stylesheet.css" type="text/css">-->
+    <title>Maps</title>
+    <!--
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  	-->
+  </head>
+  <body>
+  <div id="wrapper">
+    <div id="mainMap">
+     </div>
+  </div>
+  <button onclick=""></button>
+  <script>
+    
+    var position = {lat: 59.3498092, lng: 18.0684758};
+
+    function move(dir){
+      if(dir === 'up'){
+        position = {lat: (position['lat'] + 0.01), lng: (position['lng']) }
+
+      }
+      else if(dir === 'down'){
+        
+      }
+      else if(dir === 'left'){
+        
+      }
+      else if(dir === 'right'){
+        
+      }
+
+    }
+
+    
+    function moveUp(){
+      position = {lat: (position['lat'] + 0.01), lng: (position['lng']) }
+      console.log(position)
+      return position;
+    }
+    
+    function moveDown(){
+      position = {lat: (position['lat'] - 0.01), lng: (position['lng']) }
+      console.log(position)
+      return position;
+    }
+    
+    
+    function moveRight(){
+      position = {lat: (position['lat']), lng: (position['lng'] + 0.01) }
+      console.log(position)
+      return position;
+    }
+
+    function moveLeft(){
+      position = {lat: (position['lat']), lng: (position['lng'] - 0.01) }
+      console.log(position)
+      return position;
+    }
+
+    function  TiltMapControl(controlDiv, map){
+
+
+    }
+
+    function UpDownControl(controlDiv, map) {
+
+      // Set CSS for the control border.
+      var controlUp = document.createElement('div');
+      controlUp.id = "upButton";
+      controlUp.className = "buttonText";
+      controlUp.innerHTML = "Move Up";
+      controlDiv.appendChild(controlUp);
+
+      var controlDown = document.createElement('div');
+      controlDown.id = "downButton";
+      controlDown.className = "buttonText";
+      controlDown.innerHTML = "Move Down";
+      controlDiv.appendChild(controlDown);
+
+      controlUp.addEventListener('click', function() {
+        map.setCenter(moveUp());
+      });
+      controlDown.addEventListener('click', function() {
+        map.setCenter(moveDown());
+      });
+
+    }
+
+    function LeftRightControl(controlDiv, map) {
+
+      // Set CSS for the control border.
+      var controlLeft = document.createElement('div');
+      controlLeft.id = "leftButton";
+      controlLeft.className = "buttonText";
+      controlLeft.innerHTML = "Move Left";
+      controlDiv.appendChild(controlLeft);
+
+      var controlRight = document.createElement('div');
+      controlRight.id = "rightButton";
+      controlRight.className = "buttonText";
+      controlRight.innerHTML = "Move Right";
+      controlDiv.appendChild(controlRight);
+
+      controlLeft.addEventListener('click', function() {
+        map.setCenter(moveLeft());
+      });
+      controlRight.addEventListener('click', function() {
+        map.setCenter(moveRight());
+      });
+
+    }
+
+    function initMap() {
+      var uluru = {lat: 59.3498092, lng: 18.0684758};
+
+      var mapOptions = {
+        zoom: 14,
+        center: uluru,
+        mapTypeId: 'hybrid'
+      };
+      
+      var map = new google.maps.Map(document.getElementById('mainMap'), mapOptions);
+
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        draggable: true
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        draggable: true
+      });
+
+      var moveUpDownControlDiv = document.createElement('div');
+      var moveLeftRightControlDiv = document.createElement('div');
+      var tiltMapDiv = document.createElement('div');
+
+      var upDownControl = new UpDownControl(moveUpDownControlDiv, map);
+      var leftRightControl = new LeftRightControl(moveLeftRightControlDiv, map);
+      var leftRightControl = new TiltMapControl(tiltMapDiv, map);
+
+      moveUpDownControlDiv.index = 1;
+      moveLeftRightControlDiv.index = 2;
+
+      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveUpDownControlDiv);
+      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveLeftRightControlDiv);
+
+    }
+
+  </script>
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE6k539tFPvcMmW3n-6Tb7Qt0XrqCIbuo&callback=initMap"
+  async defer></script>
+	<!--<script src="js/app.js"></script>
+	<script src="js/view.js"></script>
+	<script src="js/controller.js"></script>-->
+  </body>
+</html>

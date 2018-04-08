@@ -1,0 +1,65 @@
+#wrapper {
+  height: 100%;
+}
+
+#mainMap{
+  height: 100%;
+}
+#katt{
+  height: 200px;
+}
+
+#upButton{
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  cursor: pointer;
+  text-align: center;
+}
+
+#downButton{
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  cursor: pointer;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+#leftButton{
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  cursor: pointer;
+  text-align: center;
+}
+
+#rightButton{
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  cursor: pointer;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.buttonText{
+  color: rgb(25,25,25);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 38px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
