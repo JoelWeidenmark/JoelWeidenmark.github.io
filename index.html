@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon-precomposed" href="/images/picture.png" />
 
 
     <!--<link rel="stylesheet" href="css/stylesheet.css" type="text/css">-->
@@ -21,10 +22,14 @@
   </head>
   <body>
   <div id="wrapper">
+    <div id="frontPage">
+      <button id="frontButton" class="btn btn-primary" onclick="hideShow()">
+        Go to Maps
+      </button> 
+    </div>
     <div id="mainMap">
      </div>
   </div>
-  <button onclick=""></button>
   <script>
 
     var position = {lat: 59.3498092, lng: 18.0684758};
@@ -199,8 +204,12 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE6k539tFPvcMmW3n-6Tb7Qt0XrqCIbuo&callback=initMap"
   async defer></script>
-	<!--<script src="js/app.js"></script>
-	<script src="js/view.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/app.js"></script>
+
+	<!--<script src="js/view.js"></script>
 	<script src="js/controller.js"></script>-->
   </body>
 </html>

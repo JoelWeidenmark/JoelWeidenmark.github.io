@@ -1,9 +1,21 @@
 #wrapper {
   height: 100%;
+
+}
+
+#frontPage{
+  margin: auto;
+  margin-top: 20px;
+  width: 40%;
+}
+
+#frontButton{
+  width: 100%;
 }
 
 #mainMap{
   height: 100%;
+  display: none;
 }
 #katt{
   height: 200px;
