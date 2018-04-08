@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+
     <!--<link rel="stylesheet" href="css/stylesheet.css" type="text/css">-->
     <title>Maps</title>
     <!--
@@ -66,8 +69,8 @@
 
       moveUpDownControlDiv.index = 1;
       moveLeftRightControlDiv.index = 2;
-      tiltMapDiv.index = 3;
-      zoomMapDiv.index = 4;
+      tiltMapDiv.index = 4;
+      zoomMapDiv.index = 3;
 
       map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveUpDownControlDiv);
       map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveLeftRightControlDiv);
@@ -81,12 +84,12 @@
       
       var controlZoomIn = document.createElement('div');
       controlZoomIn.className = "buttonText";
-      controlZoomIn.innerHTML = "Zoom In";
+      controlZoomIn.innerHTML = "+";
       controlDiv.appendChild(controlZoomIn);
 
       var controlZoomOut = document.createElement('div');
       controlZoomOut.className = "buttonText";
-      controlZoomOut.innerHTML = "Zoom Out";
+      controlZoomOut.innerHTML = "-";
       controlDiv.appendChild(controlZoomOut);
       //console.log(map.getZoom());
       
@@ -129,12 +132,12 @@
       // Set CSS for the control border.
       var controlUp = document.createElement('div');
       controlUp.className = "buttonText";
-      controlUp.innerHTML = "Up";
+      controlUp.innerHTML = "<i class='fas fa-arrow-up'></i>";
       controlDiv.appendChild(controlUp);
 
       var controlDown = document.createElement('div');
       controlDown.className = "buttonText";
-      controlDown.innerHTML = "Down";
+      controlDown.innerHTML = "<i class='fas fa-arrow-down'></i>";
       controlDiv.appendChild(controlDown);
 
       controlUp.addEventListener('click', function() {
@@ -151,12 +154,12 @@
       // Set CSS for the control border.
       var controlLeft = document.createElement('div');
       controlLeft.className = "buttonText";
-      controlLeft.innerHTML = "Left";
+      controlLeft.innerHTML = "<i class='fas fa-arrow-left'></i>";
       controlDiv.appendChild(controlLeft);
 
       var controlRight = document.createElement('div');
       controlRight.className = "buttonText";
-      controlRight.innerHTML = "Right";
+      controlRight.innerHTML = "<i class='fas fa-arrow-right'></i>";
       controlDiv.appendChild(controlRight);
 
       controlLeft.addEventListener('click', function() {
