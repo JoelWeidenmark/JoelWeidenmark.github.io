@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <!--<link rel="stylesheet" href="css/stylesheet.css" type="text/css">-->
     <title>Maps</title>
@@ -22,104 +23,10 @@
   </div>
   <button onclick=""></button>
   <script>
-    
+
     var position = {lat: 59.3498092, lng: 18.0684758};
+    var zoom = 14;
 
-    function move(dir){
-      if(dir === 'up'){
-        position = {lat: (position['lat'] + 0.01), lng: (position['lng']) }
-
-      }
-      else if(dir === 'down'){
-        
-      }
-      else if(dir === 'left'){
-        
-      }
-      else if(dir === 'right'){
-        
-      }
-
-    }
-
-    
-    function moveUp(){
-      position = {lat: (position['lat'] + 0.01), lng: (position['lng']) }
-      console.log(position)
-      return position;
-    }
-    
-    function moveDown(){
-      position = {lat: (position['lat'] - 0.01), lng: (position['lng']) }
-      console.log(position)
-      return position;
-    }
-    
-    
-    function moveRight(){
-      position = {lat: (position['lat']), lng: (position['lng'] + 0.01) }
-      console.log(position)
-      return position;
-    }
-
-    function moveLeft(){
-      position = {lat: (position['lat']), lng: (position['lng'] - 0.01) }
-      console.log(position)
-      return position;
-    }
-
-    function  TiltMapControl(controlDiv, map){
-
-
-    }
-
-    function UpDownControl(controlDiv, map) {
-
-      // Set CSS for the control border.
-      var controlUp = document.createElement('div');
-      controlUp.id = "upButton";
-      controlUp.className = "buttonText";
-      controlUp.innerHTML = "Move Up";
-      controlDiv.appendChild(controlUp);
-
-      var controlDown = document.createElement('div');
-      controlDown.id = "downButton";
-      controlDown.className = "buttonText";
-      controlDown.innerHTML = "Move Down";
-      controlDiv.appendChild(controlDown);
-
-      controlUp.addEventListener('click', function() {
-        map.setCenter(moveUp());
-      });
-      controlDown.addEventListener('click', function() {
-        map.setCenter(moveDown());
-      });
-
-    }
-
-    function LeftRightControl(controlDiv, map) {
-
-      // Set CSS for the control border.
-      var controlLeft = document.createElement('div');
-      controlLeft.id = "leftButton";
-      controlLeft.className = "buttonText";
-      controlLeft.innerHTML = "Move Left";
-      controlDiv.appendChild(controlLeft);
-
-      var controlRight = document.createElement('div');
-      controlRight.id = "rightButton";
-      controlRight.className = "buttonText";
-      controlRight.innerHTML = "Move Right";
-      controlDiv.appendChild(controlRight);
-
-      controlLeft.addEventListener('click', function() {
-        map.setCenter(moveLeft());
-      });
-      controlRight.addEventListener('click', function() {
-        map.setCenter(moveRight());
-      });
-
-    }
 
     function initMap() {
       var uluru = {lat: 59.3498092, lng: 18.0684758};
@@ -127,7 +34,8 @@
       var mapOptions = {
         zoom: 14,
         center: uluru,
-        mapTypeId: 'hybrid'
+        mapTypeId: 'hybrid',
+        zoomControl: false
       };
       
       var map = new google.maps.Map(document.getElementById('mainMap'), mapOptions);
@@ -148,18 +56,139 @@
       var moveUpDownControlDiv = document.createElement('div');
       var moveLeftRightControlDiv = document.createElement('div');
       var tiltMapDiv = document.createElement('div');
+      var zoomMapDiv = document.createElement('div');
 
       var upDownControl = new UpDownControl(moveUpDownControlDiv, map);
       var leftRightControl = new LeftRightControl(moveLeftRightControlDiv, map);
-      var leftRightControl = new TiltMapControl(tiltMapDiv, map);
+      var tiltControl = new TiltMapControl(tiltMapDiv, map);
+      var zoomControl = new ZoomMapControl(zoomMapDiv, map);
+
 
       moveUpDownControlDiv.index = 1;
       moveLeftRightControlDiv.index = 2;
+      tiltMapDiv.index = 3;
+      zoomMapDiv.index = 4;
 
       map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveUpDownControlDiv);
       map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveLeftRightControlDiv);
+      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(tiltMapDiv);
+      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(zoomMapDiv);
 
     }
+
+
+    function ZoomMapControl(controlDiv, map){
+      
+      var controlZoomIn = document.createElement('div');
+      controlZoomIn.className = "buttonText";
+      controlZoomIn.innerHTML = "Zoom In";
+      controlDiv.appendChild(controlZoomIn);
+
+      var controlZoomOut = document.createElement('div');
+      controlZoomOut.className = "buttonText";
+      controlZoomOut.innerHTML = "Zoom Out";
+      controlDiv.appendChild(controlZoomOut);
+      //console.log(map.getZoom());
+      
+      controlZoomIn.addEventListener('click', function() {
+        let currZoom = map.getZoom();
+        let newZoom = currZoom + 1; 
+        map.setZoom(newZoom);
+      });
+
+      controlZoomOut.addEventListener('click', function() {
+        let currZoom = map.getZoom();
+        let newZoom = currZoom - 1; 
+        map.setZoom(newZoom);
+      });
+
+    }
+
+    function TiltMapControl(controlDiv, map){
+      var controlTiltOn = document.createElement('div');
+      controlTiltOn.className = "buttonText";
+      controlTiltOn.innerHTML = "Tilt On";
+      controlDiv.appendChild(controlTiltOn);
+
+      var controlTiltOff = document.createElement('div');
+      controlTiltOff.className = "buttonText";
+      controlTiltOff.innerHTML = "Tilt Off";
+      controlDiv.appendChild(controlTiltOff);
+
+      controlTiltOn.addEventListener('click', function() {
+        map.setTilt(45);
+      });
+      controlTiltOff.addEventListener('click', function() {
+        map.setTilt(0);
+      });
+
+    }
+
+    function UpDownControl(controlDiv, map) {
+
+      // Set CSS for the control border.
+      var controlUp = document.createElement('div');
+      controlUp.className = "buttonText";
+      controlUp.innerHTML = "Up";
+      controlDiv.appendChild(controlUp);
+
+      var controlDown = document.createElement('div');
+      controlDown.className = "buttonText";
+      controlDown.innerHTML = "Down";
+      controlDiv.appendChild(controlDown);
+
+      controlUp.addEventListener('click', function() {
+        map.setCenter(move("up"));
+      });
+      controlDown.addEventListener('click', function() {
+        map.setCenter(move("down"));
+      });
+
+    }
+
+    function LeftRightControl(controlDiv, map) {
+
+      // Set CSS for the control border.
+      var controlLeft = document.createElement('div');
+      controlLeft.className = "buttonText";
+      controlLeft.innerHTML = "Left";
+      controlDiv.appendChild(controlLeft);
+
+      var controlRight = document.createElement('div');
+      controlRight.className = "buttonText";
+      controlRight.innerHTML = "Right";
+      controlDiv.appendChild(controlRight);
+
+      controlLeft.addEventListener('click', function() {
+        map.setCenter(move("left"));
+      });
+      controlRight.addEventListener('click', function() {
+        map.setCenter(move("right"));
+      });
+
+    }
+
+    function move(dir){
+      if(dir === 'up'){
+        position = {lat: (position['lat'] + 0.01), lng: (position['lng']) }
+
+      }
+      else if(dir === 'down'){
+        position = {lat: (position['lat'] - 0.01), lng: (position['lng']) }
+        
+      }
+      else if(dir === 'left'){
+        position = {lat: (position['lat']), lng: (position['lng'] - 0.01) }
+      }
+      else if(dir === 'right'){
+        position = {lat: (position['lat']), lng: (position['lng'] + 0.01) }
+        
+      }
+      return position;
+
+    }
+
+
 
   </script>
 
