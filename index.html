@@ -250,10 +250,10 @@
       controlDiv.appendChild(controlDown);
 
       controlUp.addEventListener('click', function() {
-        map.setCenter(move("up"));
+        map.setCenter(move("up", map));
       });
       controlDown.addEventListener('click', function() {
-        map.setCenter(move("down"));
+        map.setCenter(move("down", map));
       });
 
     }
@@ -271,28 +271,30 @@
       controlDiv.appendChild(controlRight);
 
       controlLeft.addEventListener('click', function() {
-        map.setCenter(move("left"));
+        map.setCenter(move("left", map));
       });
       controlRight.addEventListener('click', function() {
-        map.setCenter(move("right"));
+        map.setCenter(move("right", map));
       });
 
     }
 
-    function move(dir){
+    function move(dir, map){
+
+      let position = map.getCenter();
       if(dir === 'up'){
-        position = {lat: (position['lat'] + 0.01), lng: (position['lng']) }
+        position = {lat: (position.lat() + 0.01), lng: (position.lng()) }
 
       }
       else if(dir === 'down'){
-        position = {lat: (position['lat'] - 0.01), lng: (position['lng']) }
+        position = {lat: (position.lat() - 0.01), lng: (position.lng()) }
         
       }
       else if(dir === 'left'){
-        position = {lat: (position['lat']), lng: (position['lng'] - 0.01) }
+        position = {lat: (position.lat()), lng: (position.lng() - 0.01) }
       }
       else if(dir === 'right'){
-        position = {lat: (position['lat']), lng: (position['lng'] + 0.01) }
+        position = {lat: (position.lat()), lng: (position.lng() + 0.01) }
         
       }
       return position;
