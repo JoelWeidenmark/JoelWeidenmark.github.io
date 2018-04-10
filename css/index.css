@@ -17,14 +17,12 @@
   height: 100%;
   display: none;
 }
-#katt{
-  height: 200px;
-}
 
 #buttonsWrapper{
   margin: auto;
   width: 300px;
   margin-top: 20px;
+  display: none;
 }
 
 .buttonText{
@@ -42,6 +40,10 @@
   padding-right: 7px;
   margin-right: 5px;
   margin-bottom: 5px;
+}
+
+.infoContent{
+  width: 200px;
 }
 
 

@@ -4,6 +4,8 @@ function hideShow() {
     var wrapper = document.getElementById("mainMap");
     front.style.display = "none";
     wrapper.style.display = "block";
+    buttonsWrapper.style.display = "block";
+
 
     /*
     if (wrapper.style.display === "none") {
