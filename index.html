@@ -1,342 +1,272 @@
 <!DOCTYPE html>
-<!-- API KEY:  AIzaSyDE6k539tFPvcMmW3n-6Tb7Qt0XrqCIbuo -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="css/index.css" type="text/css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon-precomposed" size="57x57" href="images/icons8-google-maps-57.png" />
-    <link rel="apple-touch-icon-precomposed" size="72x72" href="images/icons8-google-maps-72.png" />
-    <link rel="apple-touch-icon-precomposed" size="114x114" href="images/icons8-google-maps-114.png" />
-    <link rel="apple-touch-icon-precomposed" size="144x144" href="images/icons8-google-maps-144.png" />
 
+<head>
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!--<link rel="stylesheet" href="css/stylesheet.css" type="text/css">-->
-    <title>Maps</title>
-    <!--
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  	-->
-  </head>
-  <body>
-  <div id="wrapper">
-    <div id="frontPage">
-      <button id="frontButton" class="btn btn-primary" onclick="hideShow()">
-        Go to Maps
-      </button> 
+  <title>Creative - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/creative.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div id="mainMap">
+  </nav>
+
+  <header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong>Your Favorite Source of Free Bootstrap Themes</strong>
+          </h1>
+          <hr>
+        </div>
+        <div class="col-lg-8 mx-auto">
+          <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+        </div>
+      </div>
     </div>
-    <div id="buttonsWrapper">
-      <form>
-        <input type="button" class="btn btn-primary mr-2" value="Your Location" onclick="geoLocation()"/>
-        <input type="button" class="btn btn-primary mr-2" value="EH" onclick="goToLocation('EH')"/>
-        <input type="button" class="btn btn-primary" value="META" onclick="goToLocation('META')"/>
-      </form>
+  </header>
+
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">We've got what you need!</h2>
+          <hr class="light my-4">
+          <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <script>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">At Your Service</h2>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
+            <h3 class="mb-3">Sturdy Templates</h3>
+            <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+            <h3 class="mb-3">Ready to Ship</h3>
+            <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+            <h3 class="mb-3">Up to Date</h3>
+            <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
+            <h3 class="mb-3">Made with Love</h3>
+            <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-0" id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters popup-gallery">
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Category
+                </div>
+                <div class="project-name">
+                  Project Name
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Category
+                </div>
+                <div class="project-name">
+                  Project Name
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Category
+                </div>
+                <div class="project-name">
+                  Project Name
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Category
+                </div>
+                <div class="project-name">
+                  Project Name
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Category
+                </div>
+                <div class="project-name">
+                  Project Name
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Category
+                </div>
+                <div class="project-name">
+                  Project Name
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+      <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Let's Get In Touch!</h2>
+          <hr class="my-4">
+          <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+          <p>123-456-6789</p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          <p>
+            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/creative.min.js"></script>
+
+</body>
 
-    var position = {lat: 59.3498092, lng: 18.0684758};
-    var zoom = 14;
-    var mapObject;
-    var EH = {lat: 59.330078, lng: 18.065343};
-    var META = {lat: 59.348024, lng: 18.071402};
-    var geoPos = {lat: 59.349027, lng: 18.074402};
-
-
-    function initMap() {
-      
-
-      var mapOptions = {
-        zoom: 14,
-        center: position,
-        mapTypeId: 'hybrid',
-        zoomControl: false,
-        draggable: false,
-        scrollwheel: false,
-        scaleControl: false
-      };
-      
-      var map = new google.maps.Map(document.getElementById('mainMap'), mapOptions);
-
-      var markerEH = new google.maps.Marker({
-        title:'Bästa plugg-haket',
-        position: EH,
-        map: map,
-        animation: google.maps.Animation.DROP,
-        draggable: false
-      });
-
-      var markerMETA = new google.maps.Marker({
-        title: 'Bästa pubben',
-        position: META,
-        map: map,
-        animation: google.maps.Animation.DROP,
-        draggable: false
-      });
-
-
-      var infowindowEH = new google.maps.InfoWindow({
-        content: getInfoContent('EH')
-      });
-
-      var infowindowMETA = new google.maps.InfoWindow({
-        content: getInfoContent('META')
-      });
-
-      var infowindowGeo = new google.maps.InfoWindow({
-        content: getInfoContent('Geo')
-      });
-
-      markerEH.addListener('click', function() {
-        infowindowEH.open(map, markerEH);
-      });
-      markerMETA.addListener('click', function() {
-        infowindowMETA.open(map, markerMETA);
-      });
-
-      var moveUpDownControlDiv = document.createElement('div');
-      var moveLeftRightControlDiv = document.createElement('div');
-      var tiltMapDiv = document.createElement('div');
-      var zoomMapDiv = document.createElement('div');
-
-      var upDownControl = new UpDownControl(moveUpDownControlDiv, map);
-      var leftRightControl = new LeftRightControl(moveLeftRightControlDiv, map);
-      var tiltControl = new TiltMapControl(tiltMapDiv, map);
-      var zoomControl = new ZoomMapControl(zoomMapDiv, map);
-
-
-      moveUpDownControlDiv.index = 1;
-      moveLeftRightControlDiv.index = 2;
-      tiltMapDiv.index = 4;
-      zoomMapDiv.index = 3;
-
-      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveUpDownControlDiv);
-      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(moveLeftRightControlDiv);
-      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(tiltMapDiv);
-      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(zoomMapDiv);
-
-      mapObject = map;
-
-
-
-      geoInfoWindow = new google.maps.InfoWindow;
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          geoPos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          console.log('Done Loading Location')
-          geoInfoWindow.setPosition(geoPos);
-          geoInfoWindow.setContent('Location found.');
-          geoInfoWindow.open(map);
-          var markerGeo = new google.maps.Marker({
-            title: 'Geo',
-            position: geoPos,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            draggable: false
-          });
-          markerGeo.addListener('click', function() {
-            infowindowGeo.open(map, markerGeo);
-          });
-        }, function() {
-          handleLocationError(true, geoInfoWindow, map.getCenter());
-        });
-      } 
-
-      else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, geoInfoWindow, map.getCenter());
-      }
-
-
-    }
-
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-                            'Error: The Geolocation service failed.' :
-                            'Error: Your browser doesn\'t support geolocation.');
-      infoWindow.open(map);
-    }
-
-
-    function geoLocation(){
-      mapObject.setCenter(geoPos);
-      markerGeo({animation: google.maps.Animation.DROP});
-
-    }
-
-
-    function goToLocation(location){
-      if(location ==="EH"){
-        mapObject.setCenter(EH);
-
-      }
-      else if (location === "META"){
-        mapObject.setCenter(META);
-
-      }
-    }
-
-    function getInfoContent(location){
-      let infoString = "";
-      if(location === "META"){
-        infoString = '<div class="infoContent">'+
-          '<h1>META</h1>'+
-          '<p>Come and drink beer on Thursdays! Woop Woop!</p> ' +
-          '</div>';
-      }
-      else if (location === "EH"){
-        infoString = '<div class="infoContent">'+
-          '<h1>Espresso House</h1>'+
-          "<p>Here we've spent countless hours coding, 10/10 would recommend</p> " +
-          '</div>';
-      }
-      else if (location === "Geo"){
-        infoString = '<div class="infoContent">'+
-          '<p> Your Location </p>'+
-          '</div>';
-      }
-      return infoString
-    }
-
-
-    function ZoomMapControl(controlDiv, map){
-      
-      var controlZoomIn = document.createElement('div');
-      controlZoomIn.className = "buttonText";
-      controlZoomIn.innerHTML = "+";
-      controlDiv.appendChild(controlZoomIn);
-
-      var controlZoomOut = document.createElement('div');
-      controlZoomOut.className = "buttonText";
-      controlZoomOut.innerHTML = "-";
-      controlDiv.appendChild(controlZoomOut);
-      
-      controlZoomIn.addEventListener('click', function() {
-        let currZoom = map.getZoom();
-        let newZoom = currZoom + 1; 
-        map.setZoom(newZoom);
-      });
-
-      controlZoomOut.addEventListener('click', function() {
-        let currZoom = map.getZoom();
-        let newZoom = currZoom - 1; 
-        map.setZoom(newZoom);
-      });
-
-    }
-
-    function TiltMapControl(controlDiv, map){
-      var controlTiltOn = document.createElement('div');
-      controlTiltOn.className = "buttonText";
-      controlTiltOn.innerHTML = "Tilt On";
-      controlDiv.appendChild(controlTiltOn);
-
-      var controlTiltOff = document.createElement('div');
-      controlTiltOff.className = "buttonText";
-      controlTiltOff.innerHTML = "Tilt Off";
-      controlDiv.appendChild(controlTiltOff);
-
-      controlTiltOn.addEventListener('click', function() {
-        map.setTilt(45);
-      });
-      controlTiltOff.addEventListener('click', function() {
-        map.setTilt(0);
-      });
-
-    }
-
-    function UpDownControl(controlDiv, map) {
-
-      var controlUp = document.createElement('div');
-      controlUp.className = "buttonText";
-      controlUp.innerHTML = "<i class='fas fa-arrow-up'></i>";
-      controlDiv.appendChild(controlUp);
-
-      var controlDown = document.createElement('div');
-      controlDown.className = "buttonText";
-      controlDown.innerHTML = "<i class='fas fa-arrow-down'></i>";
-      controlDiv.appendChild(controlDown);
-
-      controlUp.addEventListener('click', function() {
-        map.setCenter(move("up", map));
-      });
-      controlDown.addEventListener('click', function() {
-        map.setCenter(move("down", map));
-      });
-
-    }
-
-    function LeftRightControl(controlDiv, map) {
-
-      var controlLeft = document.createElement('div');
-      controlLeft.className = "buttonText";
-      controlLeft.innerHTML = "<i class='fas fa-arrow-left'></i>";
-      controlDiv.appendChild(controlLeft);
-
-      var controlRight = document.createElement('div');
-      controlRight.className = "buttonText";
-      controlRight.innerHTML = "<i class='fas fa-arrow-right'></i>";
-      controlDiv.appendChild(controlRight);
-
-      controlLeft.addEventListener('click', function() {
-        map.setCenter(move("left", map));
-      });
-      controlRight.addEventListener('click', function() {
-        map.setCenter(move("right", map));
-      });
-
-    }
-
-    function move(dir, map){
-
-      let position = map.getCenter();
-      if(dir === 'up'){
-        position = {lat: (position.lat() + 0.0005), lng: (position.lng()) }
-
-      }
-      else if(dir === 'down'){
-        position = {lat: (position.lat() - 0.0005), lng: (position.lng()) }
-        
-      }
-      else if(dir === 'left'){
-        position = {lat: (position.lat()), lng: (position.lng() - 0.0005) }
-      }
-      else if(dir === 'right'){
-        position = {lat: (position.lat()), lng: (position.lng() + 0.0005) }
-        
-      }
-      return position;
-
-    }
-
-
-
-  </script>
-
-
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE6k539tFPvcMmW3n-6Tb7Qt0XrqCIbuo&callback=initMap"
-  async defer></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="js/app.js"></script>
-
-	<!--<script src="js/view.js"></script>
-	<script src="js/controller.js"></script>-->
-  </body>
 </html>
